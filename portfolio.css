@@ -1,0 +1,362 @@
+/* ===== Global Variables (White + Blue Theme ONLY) ===== */
+:root {
+  --primary-color: #005bbb;  /* blue for highlights */
+  --accent-color: #4da3ff;   /* softer blue accent */
+  --text-color: #222;        /* dark text */
+  --bg-light: #ffffff;       /* white background */
+  --card-bg: #f2f6ff;        /* very light blue for cards */
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Float Animation */
+.hover-float:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: #e9f1ff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  color: var(--primary-color);
+  font-size: 1.7rem;
+}
+
+.navbar nav a {
+  color: #333;
+  margin-left: 25px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar nav a:hover {
+  border-bottom: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  background: #f7faff;
+  padding: 80px 0;
+}
+
+.hero-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 0 30px rgba(0,91,187,0.3);
+  animation: floatImg 4s infinite ease-in-out;
+}
+
+.hero-right h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: var(--primary-color);
+}
+
+.hero-right p {
+  margin-bottom: 18px;
+  color: #333;
+}
+
+.social-links a {
+  font-size: 1.7em;
+  margin: 15px;
+  color: var(--primary-color);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.15);
+  color: var(--accent-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/* ===== Skills Section ===== */
+.skills-section {
+  background: #ffffff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 50px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.skill-category {
+  background: var(--card-bg);
+  border: 1px solid #bfd7ff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  width: 100%;
+}
+
+.skill-category h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Skill list with custom bullets */
+.skill-category ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skill-category ul li {
+  position: relative;
+  text-align: left;
+  margin-bottom: 12px;
+  padding-left: 25px;
+  color: #222;
+  font-weight: 500;
+}
+
+.skill-category ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* ===== Projects ===== */
+.projects-section {
+  background: #f7faff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  display: flex;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-img {
+  width: 40%;
+  object-fit: cover;
+}
+
+.project-details {
+  padding: 25px;
+  width: 60%;
+  text-align: left;
+}
+
+.project-details h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* ===== Experience ===== */
+.experience-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.experience-card {
+  background: var(--card-bg);
+  border: 1px solid #bfd7ff;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: var(--shadow);
+}
+
+.timeframe {
+  float: right;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+/* ===== Contact ===== */
+.contact-section {
+  padding: 80px 0;
+  text-align: center;
+  background: #f7faff;
+}
+
+.contact-links a {
+  margin: 10px 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-links a:hover {
+  color: var(--primary-color);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: #e9f1ff;
+  padding: 20px;
+  color: #333;
+  text-align: center;
+  border-top: 1px solid #bfd7ff;
+}
+
+/* ===== Scroll top ===== */
+.scroll-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px;
+  border-radius: 50%;
+  display: none;
+  transition: 0.3s;
+}
+
+.scroll-top:hover {
+  background: var(--accent-color);
+  transform: scale(1.15);
+}
+
+.scroll-top.show {
+  display: inline-block;
+}
+
+/* ===== Responsive Fixes ===== */
+@media (max-width: 768px) {
+  .hero-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 230px;
+    height: 230px;
+  }
+
+  .project-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-img {
+    width: 100%;
+  }
+
+  .project-details {
+    width: 100%;
+    text-align: center;
+  }
+
+  .timeframe {
+    float: none;
+    display: block;
+    margin-top: 5px;
+  }
+}
